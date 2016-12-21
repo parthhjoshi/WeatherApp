@@ -89,59 +89,20 @@ namespace WeatherApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void Forecast_Click(object sender, RoutedEventArgs e)
+        private void Forecast_Click(object sender, RoutedEventArgs e)
         {
+            Frame.Navigate(typeof(Forecast));
 
-            #region -Fetch weather data from API-
-            var position = await LocationManager.GetPosition();
-            RootObjectF Forecast = await WeatherForecast.Forecast(position.Coordinate.Latitude, position.Coordinate.Longitude, 16);
-            #endregion
-            #region -Creating and binding into weather list-
-            List<DayWeather> WeatherList = new List<DayWeather>();
-            foreach (var tempDayWeather in Forecast.list)
-            {
-                DayWeather Dw = new DayWeather();
-                Dw.Icon= String.Format("ms-appx:///Assets/Weather/{0}.png", Forecast.list[1].weather[0].icon);
-                Dw.Description = tempDayWeather.weather[0].description;
-                Dw.Temp= tempDayWeather.temp.day.ToString();
-                System.DateTime tDate = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-                Dw.WeatherDate=tDate.AddSeconds(tempDayWeather.dt).ToString("dd-MM-yyyy");
-                WeatherList.Add(Dw);
-            }
-            #endregion
-            string icon = String.Format("ms-appx:///Assets/Weather/{0}.png", Forecast.list[1].weather[0].icon);
-            ResultImage2.Source = new BitmapImage(new Uri(icon, UriKind.Absolute));
 
-            var date1 = Forecast.list[1].dt;
-            System.DateTime Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            Date = Date.AddSeconds(date1);
-            DateTB.Text = "Date: " + Date.ToString("dd-MM-yyyy");
-            DescriptionB.Text = "Description: " + Forecast.list[1].weather[0].description;
-            TempFBlock.Text = "Temp: " + Forecast.list[1].temp.day.ToString();
-
-            //2
-
-            string icon2 = String.Format("ms-appx:///Assets/Weather/{0}.png", Forecast.list[2].weather[0].icon);
-            ResultImage3.Source = new BitmapImage(new Uri(icon2, UriKind.Absolute));
-
-            var date2 = Forecast.list[2].dt;
-            System.DateTime Date2 = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            Date2 = Date2.AddSeconds(date2);
-            DateTB3.Text = "Date: " + Date2.ToString("dd-MM-yyyy");
-            DescriptionB3.Text = "Description: " + Forecast.list[2].weather[0].description;
-            TempFBlock3.Text = "Temp: " + Forecast.list[2].temp.day.ToString();
-
-            //3
-
-            string icon3 = String.Format("ms-appx:///Assets/Weather/{0}.png", Forecast.list[3].weather[0].icon);
-            ResultImage4.Source = new BitmapImage(new Uri(icon3, UriKind.Absolute));
-
-            var date3 = Forecast.list[1].dt;
-            System.DateTime Date3 = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            Date3 = Date.AddSeconds(date3);
-            DateTB4.Text = "Date: " + Date3.ToString("dd-MM-yyyy");
-            DescriptionB4.Text = "Description: " + Forecast.list[3].weather[0].description;
-            TempFBlock4.Text = "Temp: " + Forecast.list[3].temp.day.ToString();
         }
-     }
+
+
+
+
+        private void Navigate_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Forecast));
+
+        }
+    }
 }

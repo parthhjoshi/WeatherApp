@@ -8,69 +8,22 @@
     mc:Ignorable="d"
    Loaded="Page_Loaded">
 
-    <Grid Background="Gray" Margin="0,0,0,0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="4*"/>
-        </Grid.ColumnDefinitions>
-        
-       <StackPanel Grid.Column="0">
+    
+
+        <StackPanel Height="Auto" Width="Auto" Background="Gray">
             <StackPanel Orientation="Horizontal" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Button Name="Celsius" Content="Celsius" Click="Celsius_Click" Foreground="White" Margin="0,20,10,0"/>
                 <Button Name="Fahrenheit" Content="Fahrenheit" Click="Fahrenheit_Click" Foreground="White" Margin="10,20,0,0"/>
             </StackPanel>
-            
+
             <Image Name="ResultImage" Height="200" Width="200" HorizontalAlignment="Center"/>
-            <TextBlock Name="Name" Width="Auto" Foreground="White" FontSize="32" HorizontalAlignment="Center"/>
+            <TextBlock Name="NameTb" Width="Auto" Foreground="White" FontSize="32" HorizontalAlignment="Center"/>
             <TextBlock Name="TempTb" Width="Auto" Foreground="White" FontSize="36" HorizontalAlignment="Center"/>
             <TextBlock Name="DescTb" Width="Auto" Foreground="White" FontSize="32" HorizontalAlignment="Center"/>
             <TextBlock Name="dayTb" Width="Auto" Foreground="White" FontSize="30" HorizontalAlignment="Center"/>
-            <Button Name="Forecast" Foreground="White" Content="Forecast for 10 days" Click="Forecast_Click" HorizontalAlignment="Center" Margin="0,50,0,0"/>
+            <Button Name="Forecast" Foreground="White" Content="Get Forecast" Click="Forecast_Click" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
             
-       </StackPanel>
-        
+        </StackPanel>       
        
-        <StackPanel Grid.Column="1">           
-            <StackPanel Orientation="Horizontal">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="4*" />                        
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="80"/>
-                    </Grid.RowDefinitions>
-                   
-                            
-                   <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
-                        <Image Name="ResultImage2" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 0,10,10" Grid.Column="0" Grid.Row="0" />
-                        <TextBlock Name="DateTB" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="TempFBlock" FontSize="18" Foreground="White" Margin="10,10,10,10"/>
-                        <TextBlock Name="DescriptionB" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="HighLow" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                   </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-                        <Image Name="ResultImage3" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 0,10,10" Grid.Column="0" Grid.Row="0" />
-                        <TextBlock Name="DateTB3" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="TempFBlock3" FontSize="18" Foreground="White" Margin="10,10,10,10"/>
-                        <TextBlock Name="DescriptionB3" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="HighLow3" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                        <Image Name="ResultImage4" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 0,10,10" Grid.Column="0" Grid.Row="0" />
-                        <TextBlock Name="DateTB4" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="TempFBlock4" FontSize="18" Foreground="White" Margin="10,10,10,10"/>
-                        <TextBlock Name="DescriptionB4" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                        <TextBlock Name="HighLow4" FontSize="18" Foreground="White"  Margin="10,10,10,10"/>
-                    </StackPanel>
-
-                </Grid>               
-            </StackPanel>            
-        </StackPanel>
-    </Grid>    
+  
 </Page>
